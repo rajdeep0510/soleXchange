@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +8,8 @@
     <link href="src/output.css" rel="stylesheet">
 </head>
 <body class="bg-gray-50">
-    <?php include_once 'navbar.php'; ?>
-
+    <?php include_once './src/helpers/navbar.php'; ?>
+  
     <main>
         <!-- Hero Section with Slider -->
         <section class="relative h-[500px] overflow-hidden">
@@ -30,64 +31,20 @@
             <h2 class="text-3xl font-bold mb-8 text-gray-800">Recommended for you</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
                 <!-- Product Card 1 -->
-                <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <img src="https://cdn.findyourkicks.com/uploads/all/t2CrP3MwylczuopnHxoZYPNEEHuE688KJ6dMZ8MO.png" alt="Grey Athletic Shoe" class="w-full h-48 object-cover rounded-t-lg">
-                    <div class="p-4">
-                        <h3 class="text-lg font-semibold">Item 1</h3>
-                        <p class="text-green-600 font-bold my-2">$19.99</p>
-                        <button class="w-full bg-green-500 text-white py-2 rounded hover:bg-green-600 transition-colors duration-300">
-                            Buy Now
-                        </button>
+                <?php foreach ($products as $product) { ?>
+                <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
+                    <img src="<?php echo $product['img_url']; ?>" alt="Grey Athletic Shoe" class="w-full h-48 object-cover rounded-t-lg">
+                    <div class="p-4 flex flex-col flex-grow justify-between">
+                        <h3 class="text-lg font-semibold"><?php echo $product['product_name']; ?></h3>
+                        <p class="text-green-600 font-bold my-2"><?php echo $product['product_price']; ?></p>
+                        <div class="mt-auto flex-grow flex items-center justify-center">
+                            <button class="w-full bg-green-500 text-white py-2 mt-2 rounded hover:bg-green-600 transition-colors duration-300">
+                                Buy Now
+                            </button>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Product Card 2 -->
-                <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <img src="assets/images/shoe-2.jpg" alt="Black Nike Air" class="w-full h-48 object-cover rounded-t-lg">
-                    <div class="p-4">
-                        <h3 class="text-lg font-semibold">Item 2</h3>
-                        <p class="text-green-600 font-bold my-2">$29.99</p>
-                        <button class="w-full bg-green-500 text-white py-2 rounded hover:bg-green-600 transition-colors duration-300">
-                            Buy Now
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Product Card 3 -->
-                <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <img src="assets/images/shoe-3.jpg" alt="Black Nike Running" class="w-full h-48 object-cover rounded-t-lg">
-                    <div class="p-4">
-                        <h3 class="text-lg font-semibold">Item 3</h3>
-                        <p class="text-green-600 font-bold my-2">$39.99</p>
-                        <button class="w-full bg-green-500 text-white py-2 rounded hover:bg-green-600 transition-colors duration-300">
-                            Buy Now
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Product Card 4 -->
-                <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <img src="assets/images/shoe-4.jpg" alt="Black Nike Air Max" class="w-full h-48 object-cover rounded-t-lg">
-                    <div class="p-4">
-                        <h3 class="text-lg font-semibold">Item 3</h3>
-                        <p class="text-green-600 font-bold my-2">$39.99</p>
-                        <button class="w-full bg-green-500 text-white py-2 rounded hover:bg-green-600 transition-colors duration-300">
-                            Buy Now
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Product Card 5 -->
-                <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <img src="assets/images/shoe-5.jpg" alt="Black Nike Sport" class="w-full h-48 object-cover rounded-t-lg">
-                    <div class="p-4">
-                        <h3 class="text-lg font-semibold">Item 3</h3>
-                        <p class="text-green-600 font-bold my-2">$39.99</p>
-                        <button class="w-full bg-green-500 text-white py-2 rounded hover:bg-green-600 transition-colors duration-300">
-                            Buy Now
-                        </button>
-                    </div>
-                </div>
+                <?php } ?>
             </div>
         </section>
 

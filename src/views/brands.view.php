@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-white">
-    <?php include_once 'navbar.php'; ?>
+    <?php require __DIR__ . '/../helpers/navbar.php'; ?>
 
     <div class="grid grid-cols-4 gap-6 p-10">
         <div class="bg-gray-200 flex items-center justify-center p-6 h-40">
