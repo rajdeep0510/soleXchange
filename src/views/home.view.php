@@ -26,47 +26,9 @@
             </div>
         </section>
 
-        <!-- Recommended Products Section -->
-        <section class="px-8 py-12">
-            <h2 class="text-3xl font-bold mb-8 text-gray-800">Recommended for you</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
-                <!-- Product Card 1 -->
-                <?php foreach ($products as $product) { ?>
-                <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
-                    <img src="<?php echo $product['img_url']; ?>" alt="Grey Athletic Shoe" class="w-full h-48 object-cover rounded-t-lg">
-                    <div class="p-4 flex flex-col flex-grow justify-between">
-                        <h3 class="text-lg font-semibold"><?php echo $product['product_name']; ?></h3>
-                        <p class="text-green-600 font-bold my-2"><?php echo $product['product_price']; ?></p>
-                        <div class="mt-auto flex-grow flex items-center justify-center">
-                            <button class="w-full bg-green-500 text-white py-2 mt-2 rounded hover:bg-green-600 transition-colors duration-300">
-                                Buy Now
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <?php } ?>
-            </div>
-        </section>
+        <?php include_once './src/helpers/card.php'; ?> <!-- Product Card -->
 
-        <!-- Most Popular Section -->
-        <section class="px-8 py-12 bg-gray-100">
-            <h2 class="text-3xl font-bold mb-8 text-gray-800">Most Popular</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
-                <!-- Popular Product Card -->
-                <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <img src="assets/images/popular-1.jpg" alt="Red Running Shoe" class="w-full h-48 object-cover rounded-t-lg">
-                    <div class="p-4">
-                        <h3 class="text-lg font-semibold">Item 1</h3>
-                        <p class="text-green-600 font-bold my-2">$19.99</p>
-                        <button class="w-full bg-green-500 text-white py-2 rounded hover:bg-green-600 transition-colors duration-300">
-                            Buy Now
-                        </button>
-                    </div>
-                </div>
-                <!-- Add more popular products as needed -->
-            </div>
-        </section>
-
+        
         <!-- Newsletter Section -->
         <section class="px-8 py-16 bg-white">
             <div class="max-w-2xl mx-auto text-center">

@@ -9,37 +9,20 @@
 <body class="bg-white">
     <?php require __DIR__ . '/../helpers/navbar.php'; ?>
 
-    <div class="grid grid-cols-4 gap-6 p-10">
-        <div class="bg-gray-200 flex items-center justify-center p-6 h-40">
-            <span class="text-xl font-bold">adidas originals</span>
-        </div>
-        <div class="bg-gray-200 flex items-center justify-center p-6 h-40">
-            <span class="text-xl font-bold">Asics</span>
-        </div>
-        <div class="bg-gray-200 flex items-center justify-center p-6 h-40">
-            <span class="text-xl font-bold">Almost Gods</span>
-        </div>
-        <div class="bg-gray-900 text-white flex items-center justify-center p-6 h-40">
-            <span class="text-xl font-bold">Billionaire Boys Club</span>
-        </div>
-        <div class="bg-gray-200 flex items-center justify-center p-6 h-40">
-            <span class="text-xl font-bold">Birkenstock</span>
-        </div>
-        <div class="bg-gray-200 flex items-center justify-center p-6 h-40">
-            <span class="text-xl font-bold">Clarks Originals</span>
-        </div>
-        <div class="bg-gray-200 flex items-center justify-center p-6 h-40">
-            <span class="text-xl font-bold">Converse</span>
-        </div>
-        <div class="bg-gray-200 flex items-center justify-center p-6 h-40">
-            <span class="text-xl font-bold">Crocs</span>
-        </div>
-        <div class="bg-gray-200 flex items-center justify-center p-6 h-40">
-            <span class="text-xl font-bold">EDWIN</span>
-        </div>
-        <div class="bg-gray-200 flex items-center justify-center p-6 h-40">
-            <span class="text-xl font-bold">FARAK</span>
-        </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-10">
+        <?php foreach ($products as $product): ?>            
+                <a href="<?php echo htmlspecialchars($product['link']); ?>" 
+               class="block transition-all duration-300 hover:scale-105">
+                <div class="bg-gray-200 text-gray-900 
+                            flex items-center justify-center p-6 h-40 rounded-lg
+                            hover:bg-gray-600 hover:text-white
+                            transition-colors duration-300 cursor-pointer">
+                    <span class="text-xl font-bold">
+                        <?php echo htmlspecialchars($product['name']); ?>
+                    </span>
+                </div>
+            </a>
+        <?php endforeach; ?>    
     </div>
 </body>
 </html>

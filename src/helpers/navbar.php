@@ -17,6 +17,7 @@
                 <a href="/soleXchange/" class="text-white hover:text-green-500 transition-colors duration-300">Home</a>
                 <a href="/soleXchange/about/" class="text-white hover:text-green-500 transition-colors duration-300">About Us</a>
                 <a href="/soleXchange/brands/" class="text-white hover:text-green-500 transition-colors duration-300">Brand</a>
+                <a href="/soleXchange/sell/" class="text-white hover:text-green-500 transition-colors duration-300">Sell</a>
             </div>
 
             <!-- Search Bar -->
