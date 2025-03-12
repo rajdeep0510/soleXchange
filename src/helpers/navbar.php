@@ -57,7 +57,7 @@
     <!-- Mobile Menu (Hidden by default) -->
     <div class="md:hidden hidden">
         <div class="px-2 pt-2 pb-3 space-y-1">
-            <a href="/soleXchange/" class="block text-white hover:text-green-500 py-2">Home</a>
+            <a href="  /soleXchange/" class="block text-white hover:text-green-500 py-2">Home</a>
             <a href="/soleXchange/about/" class="block text-white hover:text-green-500 py-2">About Us</a>
             <a href="/soleXchange/brands/" class="block text-white hover:text-green-500 py-2">Brand</a>
             <!-- Remove or update categories link if not needed -->

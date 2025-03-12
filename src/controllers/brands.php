@@ -27,6 +27,7 @@ $products = [
         'name' => 'Reebok',
         'link' => '/soleXchange/src/controllers/brand_products.php?brand=Reebok',
     ],
+    
 ];
 
 require 'src/views/brands.view.php' ;
